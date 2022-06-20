@@ -47,15 +47,15 @@ const ContactScreen = ({ navigation }) => {
       style={{
         backgroundColor: COLORS.white,
         flex: 1,
-        marginTop: 30,
+        marginTop: 10,
       }}
     >
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+      {/* <TouchableOpacity onPress={() => navigation.goBack()}>
         <View style={styles.header}>
           <Icon name="arrow-back-ios" size={28} />
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>Liên hệ</Text>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       {/* Cart List */}
       <ScrollView style={{ paddingHorizontal: 20, marginTop: 20 }}>
         <FormInput

@@ -272,10 +272,10 @@ const DeliverScreen = ({ navigation, route }) => {
       style={{
         backgroundColor: COLORS.white,
         flex: 1,
-        marginTop: 30,
+        marginTop: 10,
       }}
     >
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <Icon
           name="arrow-back-ios"
           size={28}
@@ -287,7 +287,7 @@ const DeliverScreen = ({ navigation, route }) => {
         >
           Thông tin giao hàng
         </Text>
-      </View>
+      </View> */}
       <ScrollView
         style={{
           flex: 1,

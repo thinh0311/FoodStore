@@ -147,7 +147,7 @@ const OrderScreen = ({ navigation, route }) => {
         marginTop: 30,
       }}
     >
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <Icon
           name="arrow-back-ios"
           size={28}
@@ -159,7 +159,7 @@ const OrderScreen = ({ navigation, route }) => {
         >
           Đơn hàng
         </Text>
-      </View>
+      </View> */}
       {/* Cart List */}
       <RenderCartList />
       <ModalComponent

@@ -65,12 +65,12 @@ const DetailDiscountScreen = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={{ backgroundColor: COLORS.white, marginTop: 30 }}>
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
         <Text style={{ fontSize: 20, fontWeight: "bold" }}></Text>
-      </View>
+      </View> */}
       <ScrollView>
-        <Text
+        {/* <Text
           style={{
             marginTop: 10,
             textAlign: "center",
@@ -79,7 +79,7 @@ const DetailDiscountScreen = ({ navigation, route }) => {
           }}
         >
           Chỉnh sửa phiếu giảm giá
-        </Text>
+        </Text> */}
         <FormInput
           defaultValue={discount.tenPhieuGiamGia}
           lable="Tên phiếu"

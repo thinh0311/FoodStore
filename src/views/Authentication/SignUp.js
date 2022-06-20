@@ -95,12 +95,12 @@ const SignUp = ({ navigation }) => {
   };
   return (
     <>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+      {/* <TouchableOpacity onPress={() => navigation.goBack()}>
         <View style={styles.header}>
           <Icon name="arrow-back-ios" size={28} />
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>Đăng ký</Text>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <AuthLayout
         title="Đăng ký tài khoản"
         subtitle="Tạo một tài khoản để tiếp tục"

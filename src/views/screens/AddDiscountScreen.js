@@ -50,7 +50,7 @@ const AddDiscountScreen = ({ navigation }) => {
 
   return (
     <ScrollView>
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
       </View>
       <Text
@@ -62,7 +62,7 @@ const AddDiscountScreen = ({ navigation }) => {
         }}
       >
         Thêm phiếu giảm giá
-      </Text>
+      </Text> */}
 
       <FormInput
         lable="Tên phiếu giảm giá"

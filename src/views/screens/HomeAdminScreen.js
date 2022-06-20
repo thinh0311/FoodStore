@@ -18,11 +18,13 @@ import {
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import Icon2 from "react-native-vector-icons/FontAwesome5";
 import categoryApi from "../../api/categoryApi";
 import productApi from "../../api/productApi";
 import accountApi from "../../api/accountApi";
 import COLORS from "../../consts/colors";
 import Button from "../components/Button";
+import ProductItem from "./ProductItem";
 const { width } = Dimensions.get("screen");
 const cardWidth = width / 2 - 20;
 
@@ -146,52 +148,111 @@ const HomeAdminScreen = ({ navigation }) => {
           ]);
         }}
       >
-        <View style={styles.card}>
-          <View style={{ alignItems: "center", marginTop: 10 }}>
-            <Image
-              source={{ uri: product.anhSanPham }}
-              style={{ height: 120, width: 120, borderRadius: 10 }}
-            />
-          </View>
-          <View style={{ marginTop: 10, marginBottom: 5 }}>
-            <Text style={{ fontSize: 14, fontWeight: "bold" }}>
-              {product.tenSanPham}
-            </Text>
-          </View>
-          <View
-            style={{
-              marginTop: 5,
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <Text style={{ fontSize: 14, fontWeight: "bold" }}>
-              {product.giaSanPham}đ
-            </Text>
-          </View>
-        </View>
+        <ProductItem
+          onPress={() => {}}
+          name={product.tenSanPham}
+          image={product.anhSanPham}
+          price={product.giaSanPham}
+          status={product.trangThaiSanPham == 1 ? "Đang bán" : "Nghỉ bán"}
+          qty={product.soLuongTonKho}
+          describe={product.moTa}
+          key={product.maSanPham}
+        />
       </TouchableHighlight>
     );
   };
+  const [searchText, setSearchText] = React.useState("");
+  const filteredProduct = () =>
+    filteredItemByCategory.filter((eachProduct) =>
+      searchText === ""
+        ? eachProduct.tenSanPham
+            .toLowerCase()
+            .includes(searchText.toLowerCase())
+        : eachProduct.tenSanPham.toLowerCase() === searchText.toLowerCase()
+    );
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
       <View style={styles.header}>
         <View style={{ flexDirection: "row" }}>
           <Text style={{ fontSize: 18 }}>Quản lý sản phẩm</Text>
         </View>
       </View>
-
       <View>
-        <ListCategory />
+        <View
+          style={{
+            marginTop: 10,
+            marginHorizontal: 10,
+            marginVertical: 10,
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <Icon
+            name="search"
+            size={15}
+            color={"black"}
+            style={{
+              position: "absolute",
+              top: 12,
+              left: 10,
+            }}
+          />
+          <TextInput
+            autoCorrect={false}
+            onChangeText={(text) => {
+              setSearchText(text);
+            }}
+            style={{
+              backgroundColor: "#C0C0C0",
+              height: 40,
+              flex: 1,
+              marginEnd: 8,
+              borderRadius: 5,
+              opacity: 0.8,
+              paddingStart: 30,
+            }}
+          />
+          <Icon2 name="bars" size={30} color={"black"} />
+        </View>
+        <View
+          style={{
+            height: 100,
+          }}
+        >
+          <View
+            style={{
+              height: 1,
+              backgroundColor: "grey",
+            }}
+          />
+          <ListCategory />
+          <View style={{ height: 1, backgroundColor: "grey" }} />
+        </View>
       </View>
-      <FlatList
-        showsHorizontalScrollIndicator={false}
-        numColumns={2}
-        data={filteredItemByCategory}
-        keyExtractor={(item) => item.maSanPham}
-        renderItem={({ item }) => <Card product={item} />}
-      ></FlatList>
+      {filteredProduct().length > 0 ? (
+        <FlatList
+          data={filteredProduct()}
+          renderItem={({ item }) => <Card product={item} />}
+          keyExtractor={(eachProduct) => eachProduct.maSanPham}
+        />
+      ) : (
+        <View
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              color: "black",
+              fontSize: 12,
+            }}
+          >
+            No product found
+          </Text>
+        </View>
+      )}
       <View
         style={{
           marginBottom: 15,

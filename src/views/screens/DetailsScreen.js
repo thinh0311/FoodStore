@@ -116,10 +116,10 @@ const DetailsScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView style={{ backgroundColor: COLORS.white, marginTop: 30 }}>
       <View style={styles.header}>
-        <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
+        {/* <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>
           Chi tiết sản phẩm
-        </Text>
+        </Text> */}
         <TouchableOpacity
           style={{
             width: 40,
@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
     height: 50,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
   },
   detail: {
     paddingHorizontal: 20,

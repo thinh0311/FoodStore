@@ -84,14 +84,14 @@ const InfoUserScreen = ({ navigation, route }) => {
   };
   return (
     <>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+      {/* <TouchableOpacity onPress={() => navigation.goBack()}>
         <View style={styles.header}>
           <Icon name="arrow-back-ios" size={28} />
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>
             Thông tin người dùng
           </Text>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       {/* Form Input and SignUp */}
       <ScrollView
         style={{

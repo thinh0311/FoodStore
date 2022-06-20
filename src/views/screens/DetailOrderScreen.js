@@ -128,7 +128,7 @@ const DetailOrderScreen = ({ navigation, route }) => {
         marginTop: 30,
       }}
     >
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <Icon
           name="arrow-back-ios"
           size={28}
@@ -140,7 +140,7 @@ const DetailOrderScreen = ({ navigation, route }) => {
         >
           Chi tiết đơn hàng
         </Text>
-      </View>
+      </View> */}
       {/* Cart List */}
       <RenderProductList />
       <View

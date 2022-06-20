@@ -15,10 +15,10 @@ const SettingScreen = ({ navigation }) => {
       style={{
         backgroundColor: COLORS.white,
         flex: 1,
-        marginTop: 30,
+        marginTop: 10,
       }}
     >
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+      {/* <TouchableOpacity onPress={() => navigation.goBack()}>
         <View style={styles.header}>
           <Icon
             name="arrow-back-ios"
@@ -27,7 +27,7 @@ const SettingScreen = ({ navigation }) => {
           />
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>Cài đặt</Text>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       {/* Cart List */}
     </SafeAreaView>
   );

@@ -89,12 +89,12 @@ const FavoriteScreen = ({ navigation, route }) => {
     <SafeAreaView
       style={{ flex: 1, backgroundColor: COLORS.white, marginTop: 30 }}
     >
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+      {/* <TouchableOpacity onPress={() => navigation.goBack()}>
         <View style={styles.header}>
           <Icon name="arrow-back-ios" size={28} />
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>Ưa thích</Text>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <FlatList
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item, index) => index}

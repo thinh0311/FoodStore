@@ -146,15 +146,17 @@ const OrderAdminScreen = ({ navigation }) => {
               setIdAcount(item.maTaiKhoan);
               setNguoiNhan(item.nguoiNhan);
               setMaGiamGia(item.maGiamGia);
-              Alert.alert("Cảnh báo", "Xác nhận đã giao đơn hàng?", [
-                { text: "Không", onPress: () => {} },
-                {
-                  text: "Có",
-                  onPress: () => {
-                    updateOrder();
+              if (item.trangThaiDonHang === 0) {
+                Alert.alert("Cảnh báo", "Xác nhận đã giao đơn hàng?", [
+                  { text: "Không", onPress: () => {} },
+                  {
+                    text: "Có",
+                    onPress: () => {
+                      updateOrder();
+                    },
                   },
-                },
-              ]);
+                ]);
+              }
             }}
           >
             <View>

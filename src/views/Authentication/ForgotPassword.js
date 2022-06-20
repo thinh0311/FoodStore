@@ -88,14 +88,14 @@ const ForgotPassword = ({ navigation }) => {
   };
   return (
     <>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+      {/* <TouchableOpacity onPress={() => navigation.goBack()}>
         <View style={styles.header}>
           <Icon name="arrow-back-ios" size={28} />
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>
             Quên mật khẩu
           </Text>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <AuthLayout
         title="Nhập thông tin tài khoản"
         // subtitle="Nhập đầy đủ để lấy lại thông tin"

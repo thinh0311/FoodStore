@@ -29,6 +29,7 @@ import GetAccountScreen from "./src/views/screens/GetAccountScreen";
 import ForgotPassword from "./src/views/Authentication/ForgotPassword";
 import AddDiscountScreen from "./src/views/screens/AddDiscountScreen";
 import DetailDiscountScreen from "./src/views/screens/DetailDiscountScreen";
+import DetailOrderScreen from "./src/views/screens/DetailOrderScreen";
 
 const Stack = createStackNavigator();
 
@@ -54,15 +55,15 @@ const App = () => {
         />
         <Stack.Screen name="Category" component={CategoryScreen} />
         <Stack.Screen name="OderAdmin" component={OrderAdminScreen} />
-        <Stack.Screen
-          name="AddProduct"
-          component={AddProductScreen}
-          options={{ title: "Thêm sản phẩm" }}
-        />
+        <Stack.Screen name="AddProduct" component={AddProductScreen} />
         <Stack.Screen name="AddDiscount" component={AddDiscountScreen} />
         <Stack.Screen name="DetailDiscount" component={DetailDiscountScreen} />
         <Stack.Screen name="Cart" component={CartScreen} />
-        <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
+        <Stack.Screen
+          name="DetailsScreen"
+          component={DetailsScreen}
+          options={{ title: "DetailProduct" }}
+        />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen
           name="SignIn"
@@ -79,12 +80,13 @@ const App = () => {
         <Stack.Screen name="Order" component={OrderScreen} />
         <Stack.Screen name="Deliver" component={DeliverScreen} />
         <Stack.Screen name="SuccessOrder" component={SuccessScreen} />
+        <Stack.Screen name="DetailOrder" component={DetailOrderScreen} />
+        <Stack.Screen name="DetailProduct" component={DetailProductScreen} />
         <Stack.Screen
-          name="DetailProduct"
-          component={DetailProductScreen}
-          options={{ title: "Chỉnh sửa sản phẩm" }}
+          name="Password"
+          component={PasswordScreen}
+          options={{ title: "ChangePassword" }}
         />
-        <Stack.Screen name="Password" component={PasswordScreen} />
         <Stack.Screen name="GetAccount" component={GetAccountScreen} />
       </Stack.Navigator>
     </NavigationContainer>
